@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://controls.gd" type="Script" id=1]
+[ext_resource path="res://Gray Controls Screen.png" type="Texture" id=2]
+[ext_resource path="res://guanine.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://back button.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 27
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 27
+font_data = ExtResource( 3 )
+
+[node name="controls" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Gray Controls Screen" type="Sprite" parent="."]
+position = Vector2( 400.808, 401.29 )
+scale = Vector2( 25.0616, 24.8491 )
+texture = ExtResource( 2 )
+
+[node name="title" type="Label" parent="."]
+margin_left = 220.381
+margin_top = 43.532
+margin_right = 532.381
+margin_bottom = 140.532
+custom_fonts/font = SubResource( 1 )
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="move" type="Label" parent="."]
+margin_left = 35.3697
+margin_top = 163.245
+margin_right = 686.37
+margin_bottom = 196.245
+custom_fonts/font = SubResource( 2 )
+text = "- Use the left and right arrow keys to move your chip"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="drop" type="Label" parent="."]
+margin_left = 36.7301
+margin_top = 258.471
+margin_right = 699.73
+margin_bottom = 291.471
+custom_fonts/font = SubResource( 3 )
+text = "- Press the spacebar to drop your chip into the board"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pause" type="Label" parent="."]
+margin_left = 32.649
+margin_top = 340.094
+margin_right = 1079.65
+margin_bottom = 409.094
+custom_fonts/font = SubResource( 4 )
+text = "- Press the escape key to pause your game, 
+there will be a reset button in there too."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back_button" type="TextureButton" parent="."]
+margin_left = 104.978
+margin_top = 533.334
+margin_right = 644.978
+margin_bottom = 751.334
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 73.0306
+margin_top = 469.687
+margin_right = 701.031
+margin_bottom = 502.687
+custom_fonts/font = SubResource( 5 )
+text = "Press the back button to return to the title screen."
+__meta__ = {
+"_edit_use_anchors_": false
+}

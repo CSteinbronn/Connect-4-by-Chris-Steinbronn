@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://Connect 4 Gameboard.png" type="Texture" id=2]
+[ext_resource path="res://player_1.gd" type="Script" id=3]
+[ext_resource path="res://Yellow connect 4 piece - Better.png" type="Texture" id=4]
+[ext_resource path="res://Connect 4 Gameboard clone.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.636, 303.266 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.0056, 412.687 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.8221, 310.984 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10.7433, 312.46 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 404.151, 14.9146 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 47.0174, 61.3491 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 45.3076, 61.4978 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 454.328, 10 )
+
+[node name="game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Connect 4 Gameboard" type="Sprite" parent="."]
+position = Vector2( 400.646, 401.808 )
+scale = Vector2( 25.0515, 25.0515 )
+texture = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
+position = Vector2( -27.1322, -100.992 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 427.747, 585.609 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 821.524, 495.217 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 36.5319, 492.624 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 162.331, 594.464 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 289.048, 591.048 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 566.497, 601.158 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 691.327, 592.698 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 440.515, 891.721 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
+position = Vector2( 435.112, 89.2384 )
+shape = SubResource( 5 )
+
+[node name="player_1" type="KinematicBody2D" parent="." groups=[
+"player_1",
+]]
+position = Vector2( 517.985, 96.4927 )
+script = ExtResource( 3 )
+
+[node name="Yellow connect 4 piece - Better" type="Sprite" parent="player_1"]
+position = Vector2( -117.338, -4.70134 )
+scale = Vector2( 9.5, 13.6 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_1"]
+position = Vector2( -115.274, -1.51567 )
+shape = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="player_1"]
+position = Vector2( -36.8322, -22.0993 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_1/Area2D"]
+position = Vector2( -78.722, 20.5218 )
+shape = SubResource( 7 )
+
+[node name="player_change" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_change"]
+position = Vector2( 398.491, 219.553 )
+shape = SubResource( 8 )
+
+[node name="Connect 4 Gameboard clone" type="Sprite" parent="."]
+position = Vector2( 780.851, 89.6755 )
+scale = Vector2( 3.70587, 4.91746 )
+texture = ExtResource( 5 )
+[connection signal="body_entered" from="player_change" to="." method="_on_player_change_body_entered"]
